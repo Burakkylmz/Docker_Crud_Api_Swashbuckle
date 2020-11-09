@@ -7,7 +7,7 @@ using Docker_Crud_Api_Swashbuckle.Infrastructure.DataAccess.Settings.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-
+using Microsoft.OpenApi.Models;
 
 namespace Docker_Crud_Api_Swashbuckle.Infrastructure.IoC
 {
@@ -24,6 +24,12 @@ namespace Docker_Crud_Api_Swashbuckle.Infrastructure.IoC
             services.AddScoped<IProjectContext, ProjectContext>();
 
             services.AddScoped<IProductRepository, ProductRepository>();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                { Title = "Catalog API", Version = "v1" });
+            });
 
             return services;
         }
