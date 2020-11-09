@@ -5,7 +5,6 @@ using System.Net;
 using System.Threading.Tasks;
 using Docker_Crud_Api_Swashbuckle.Infrastructure.DataAccess.Repositories.Interfaces;
 using Docker_Crud_Api_Swashbuckle.Infrastructure.Entities;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
