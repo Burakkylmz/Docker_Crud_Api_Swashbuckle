@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+
+  catalogdb:
+        image: mongo
+
+
+  docker_crud_api_swashbuckle:
+    image: ${DOCKER_REGISTRY-}dockercrudapiswashbuckle
+    build:
+      context: .
+      dockerfile: Docker_Crud_Api_Swashbuckle/Dockerfile
