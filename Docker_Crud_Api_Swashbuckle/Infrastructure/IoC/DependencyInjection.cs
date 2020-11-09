@@ -13,11 +13,10 @@ namespace Docker_Crud_Api_Swashbuckle.Infrastructure.IoC
 {
     public static class DependencyInjection
     {
-        public static IConfiguration Configuration { get; }
 
         public static IServiceCollection RegisterServices(this IServiceCollection services)
         {
-            services.Configure<CatalogDbSettings>(Configuration.GetSection(nameof(CatalogDbSettings)));
+            
 
             services.AddSingleton<ICatalogDbSettings>(options => options.GetRequiredService<IOptions<CatalogDbSettings>>().Value);
 

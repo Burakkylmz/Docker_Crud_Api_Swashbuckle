@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Docker_Crud_Api_Swashbuckle.Infrastructure.DataAccess.Settings.Concrete;
+using Docker_Crud_Api_Swashbuckle.Infrastructure.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,7 +27,14 @@ namespace Docker_Crud_Api_Swashbuckle
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.Configure<CatalogDbSettings>(Configuration.GetSection(nameof(CatalogDbSettings)));
+
             services.AddControllers();
+
+            //DependencyInjection.cs
+            services.RegisterServices();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
