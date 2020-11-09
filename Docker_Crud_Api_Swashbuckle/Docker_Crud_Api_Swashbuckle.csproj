@@ -6,11 +6,11 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Infrastructure\DataAccess\Context\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MongoDB.Bson" Version="2.11.4" />
+    <PackageReference Include="MongoDB.Driver" Version="2.11.4" />
   </ItemGroup>
 
 
