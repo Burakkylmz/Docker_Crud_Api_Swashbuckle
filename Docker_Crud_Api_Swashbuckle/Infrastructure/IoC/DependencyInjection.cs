@@ -1,5 +1,7 @@
 ﻿using Docker_Crud_Api_Swashbuckle.Infrastructure.DataAccess.Context.Concrete;
 using Docker_Crud_Api_Swashbuckle.Infrastructure.DataAccess.Context.Interfaces;
+using Docker_Crud_Api_Swashbuckle.Infrastructure.DataAccess.Repositories.Concrete;
+using Docker_Crud_Api_Swashbuckle.Infrastructure.DataAccess.Repositories.Interfaces;
 using Docker_Crud_Api_Swashbuckle.Infrastructure.DataAccess.Settings.Concrete;
 using Docker_Crud_Api_Swashbuckle.Infrastructure.DataAccess.Settings.Interfaces;
 using Microsoft.Extensions.Configuration;
@@ -19,7 +21,9 @@ namespace Docker_Crud_Api_Swashbuckle.Infrastructure.IoC
 
             services.AddSingleton<ICatalogDbSettings>(options => options.GetRequiredService<IOptions<CatalogDbSettings>>().Value);
 
-            services.AddTransient<IProjectContext, ProjectContext>();
+            services.AddScoped<IProjectContext, ProjectContext>();
+
+            services.AddScoped<IProductRepository, ProductRepository>();
 
             return services;
         }
