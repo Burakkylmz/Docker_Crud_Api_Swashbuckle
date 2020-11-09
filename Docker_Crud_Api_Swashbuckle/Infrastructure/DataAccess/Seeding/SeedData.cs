@@ -22,7 +22,7 @@ namespace Docker_Crud_Api_Swashbuckle.Infrastructure.DataAccess.Seeding
         {
             return new List<Product>()
             {
-                                new Product()
+                new Product()
                 {
                     Name = "1910 Classic Training Gloves",
                     Summary= "The 1910 Classic Training Glove is a modern take on a legendary boxing glove line.",
