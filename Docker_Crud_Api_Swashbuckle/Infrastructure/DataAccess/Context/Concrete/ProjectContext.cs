@@ -1,4 +1,5 @@
 ﻿using Docker_Crud_Api_Swashbuckle.Infrastructure.DataAccess.Context.Interfaces;
+using Docker_Crud_Api_Swashbuckle.Infrastructure.DataAccess.Seeding;
 using Docker_Crud_Api_Swashbuckle.Infrastructure.DataAccess.Settings.Interfaces;
 using Docker_Crud_Api_Swashbuckle.Infrastructure.Entities;
 using MongoDB.Driver;
@@ -20,7 +21,7 @@ namespace Docker_Crud_Api_Swashbuckle.Infrastructure.DataAccess.Context.Concrete
                                         (settings.CollectionName);
 
             //Seeding operasyonunu yap
-            ProductSeed.SeedData(Products);
+            SeedData.SeedProductData(Products);
         }
 
         public IMongoCollection<Product> Products { get; }
